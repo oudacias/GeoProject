@@ -133,7 +133,8 @@ class Map(Frame):
                     note.add(tab1, text='Parcelle')
 
                     values = polygn.researchPolyg(str(polyg[0]))
-                    valDr = dr.select_colValue(str(polyg[0]))
+                    valDr = dr.selectDr(str(polyg[0]))
+                    print(str(polyg[0]))
                     valCons = cs.researPoly_Cons(str(polyg[0]))
                     valSol = tpSol.researPoly_Sol(str(polyg[0]))
                     valSpecl = specl.researPoly_Spec(str(polyg[0]))

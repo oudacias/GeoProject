@@ -15,7 +15,7 @@ class Zone:
                     " INNER JOIN sous_zone ON ST_Intersects(sous_zone.geom, zone.geom) and not ST_Contains(sous_zone.geom, zone.geom)"
                     " INNER JOIN douar ON ST_Intersects(douar.geom, sous_zone.geom) and not ST_Contains(douar.geom, sous_zone.geom) "
                     " INNER JOIN parcelles  ON ST_Intersects(parcelles.geom, douar.geom) and not ST_Contains(parcelles.geom, douar.geom)"
-                    " WHERE parcelles.id_parcelle = "+idP+" ")
+                    " WHERE parcelles.id_parcelle = 2 ")
         reslt = cur.fetchall()
         return reslt
 
