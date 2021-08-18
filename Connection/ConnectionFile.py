@@ -8,7 +8,7 @@ class Connection:
        self.passwprd = '123'
    def connect(self):
        try:
-           conn=psycopg2.connect("dbname =ife_project2 user=postgres password=123 port= 5433")
+           conn=psycopg2.connect("dbname =ife_project2 user=postgres password=123")
            print("done")
            return conn
        except:
