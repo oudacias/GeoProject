@@ -114,7 +114,7 @@ class Zn2(tk.Tk):
         person1 = str(self.person[0][1])
         person3 = str(self.person[0][3])
         mrch1 = str(self.mrch[1])
-        sz = str(self.sz[1])
+        sz = str(self.sz[0][1])
         mrch0 = str(self.mrch[0])
         mrch2 = str(self.mrch[2])
         person5 = str(self.person[0][5])

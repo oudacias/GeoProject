@@ -414,7 +414,7 @@ class ZN1:
         table2.alignment = WD_TABLE_ALIGNMENT.RIGHT
         table2.alignment = WD_TABLE_DIRECTION.RTL
 
-        table2.cell(0, 0).text = u'فلاحيةأرض'
+        table2.cell(0, 0).text = u'أرض فلاحية'
         table2.cell(0, 1).text = u'ارض بورية'
         table2.cell(0, 2).text = u'ارض زراعية مسقية'
         table2.cell(0, 3).text = u'ارض مغروسة'
@@ -486,7 +486,7 @@ class ZN1:
             msg = messagebox.showerror("ZN1", "Veuillez fermer le fichier")
 
 
-    def word_to_pdf(self, nomFr, prenomFr, prov, sZone, cercle, commun, adress, cin, tel, douar, numParcel, nomParcel, oppos, const, specul, tpSol, surf_Ha):
+    def wdFormatPDF(self, nomFr, prenomFr, prov, sZone, cercle, commun, adress, cin, tel, douar, numParcel, nomParcel, oppos, const, specul, tpSol, surf_Ha):
         project_directory = os.path.abspath(os.curdir)
         img = project_directory + "/icons/ancfcc2.png"
 
@@ -881,7 +881,7 @@ class ZN1:
         table2.alignment = WD_TABLE_ALIGNMENT.RIGHT
         table2.alignment = WD_TABLE_DIRECTION.RTL
 
-        table2.cell(0, 0).text = u'أرض فلاحية'
+        table2.cell(0, 0).text =  u'أرض فلاحية'
         table2.cell(0, 1).text = u'ارض بورية'
         table2.cell(0, 2).text = u'ارض زراعية مسقية'
         table2.cell(0, 3).text = u'ارض مغروسة'
@@ -942,10 +942,10 @@ class ZN1:
         try:
             filename = 'P' + numParcel + '_ZN1.docx'
             filepath = os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop\IFE_PIECES\ZN1', filename)
-            print(os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop\IFE_PIECES\ZN1'))
             if not os.path.exists(os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop\IFE_PIECES\ZN1')):
                 os.makedirs(os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop\IFE_PIECES\ZN1'))
             document.save(filepath)
+            print(filepath)
             # PDF
             wordFile = 'P' + numParcel + '_ZN1.docx'
             pdfFile = 'P' + numParcel + '_ZN1.pdf'

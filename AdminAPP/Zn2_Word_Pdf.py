@@ -26,6 +26,7 @@ class ZN2:
         font = style.font
         font.name = 'Calibri'
         font.size = Pt(11)
+        font.rtl = True
         # font.color.rgb = RGBColor(0x42, 0x24, 0xE9)
 
         for section in document.sections:
@@ -409,7 +410,7 @@ class ZN2:
         font.color.rgb = RGBColor(0x96, 0x96, 0x96)
 
         table2 = document.add_table(rows=1, cols=12, style='Table Grid')
-        table2.alignment = WD_TABLE_ALIGNMENT.RIGHT
+        # table2.alignment = WD_TABLE_ALIGNMENT.RIGHT
         table2.alignment = WD_TABLE_DIRECTION.RTL
 
         table2.cell(0, 0).text = u'أرض فلاحية'

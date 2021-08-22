@@ -19,11 +19,14 @@ class Zn1File(tk.Tk):
                          activeforeground="#000000").place(x=190, y=100)
 
     def oui(self):
+        os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop\IFE_PIECES\ZN1')
         filepath = os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop\IFE_PIECES\ZN1')
         options = {'initialdir': filepath,
                     'title': 'Choose your file', }
         file_path = filedialog.askopenfilenames(**options)
-        os.startfile(file_path[0])
+        print(file_path[0] + "hello")
+        if(file_path):
+            os.startfile(file_path[0])
         self.destroy()
 
     def non(self):

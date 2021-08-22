@@ -26,6 +26,7 @@ class ZN3:
         font = style.font
         font.name = 'Calibri'
         font.size = Pt(10)
+        font.rtl = True
         # font.color.rgb = RGBColor(0x42, 0x24, 0xE9)
 
         for section in document.sections:

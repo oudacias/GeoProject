@@ -132,6 +132,9 @@ class LogIn(tk.Frame):
     def connexion(self):
         try:
             mrch = Marche_BE.Marche()
+            self.userentry = "admin admin"
+            self.passentry ="123"
+
             if (len(str(self.userentry.get()).split()) == 2):
                 user = User_BE.User()
                 usr = user.user_verification(self.userentry.get(), self.passentry.get())

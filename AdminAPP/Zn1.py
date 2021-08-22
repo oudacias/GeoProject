@@ -149,7 +149,7 @@ class Zn1(tk.Tk):
         specul1 = str(self.tpSpecl[0][1])
         sol1 = str(self.tpSol[0][1])
         surf27 = str(self.polyg[5])
-        Zn1_Word_Pdf.ZN1.word(self, person1, person3, mrch1, sz, mrch0, mrch2, person5, person7, person8, dr, polyg0, polyg1, oppos1, consis1, specul1, sol1, surf27)
+        Zn1_Word_Pdf.ZN1.wdFormatPDF(self, person1, person3, mrch1, sz, mrch0, mrch2, person5, person7, person8, dr, polyg0, polyg1, oppos1, consis1, specul1, sol1, surf27)
 
 
 
