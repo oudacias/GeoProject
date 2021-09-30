@@ -484,7 +484,7 @@ class Database:
         cur = conn.cursor()
         cur.execute("CREATE TABLE synchronisation "
                     "(id_synchr SERIAL NOT NULL,"
-                    "adresse_ip INTEGER,"
+                    "adresse_ip VARCHAR (20),"
                     "sent BOOLEAN,"
                     "received BOOLEAN,"
                     "date_modification DATE,"

@@ -22,12 +22,12 @@ class ReceiveDB(Tk):
         txt = Label(lFrm, text="recevoir les données du jour ou génerale ", font=("Helvetica", 13), bg="#F7F9F9")
         txt.place(x=15, y=20)
 
-        opp_btn = Button(lFrm, text="Du jour", font=("Times New Roman", 11), bg="#4EB1FA", fg="#FFFFFF", relief=FLAT,command=FromServ_Client.SynchServerJr().receiveData)
+        opp_btn = Button(lFrm, text="Du jour", font=("Times New Roman", 11), bg="#4EB1FA", fg="#FFFFFF", relief=FLAT,command=FromServ_Client.SynchServerJr.receiveData(self))
         opp_btn.place(x=100, y=80)
 
-        opp_btn = Button(lFrm, text="Génerale", font=("Times New Roman", 11), bg="#4EB1FA", fg="#FFFFFF", relief=FLAT,command=Gnr_Client.SynchServerGnr().receiveData)
+        opp_btn = Button(lFrm, text="Génerale", font=("Times New Roman", 11), bg="#4EB1FA", fg="#FFFFFF", relief=FLAT,command=Gnr_Client.SynchServerGnr.receiveData(self))
         opp_btn.place(x=180, y=80)
 
 
-# app = ReceiveDB()
-# app.mainloop()
+#app = ReceiveDB()
+#app.mainloop()
