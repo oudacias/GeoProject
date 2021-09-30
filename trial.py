@@ -1,19 +1,18 @@
-import comtypes.client
-import os
+import psycopg2
+import datetime
 
-wordFile = 'P' + '2' + '_ZN1.docx'
-pdfFile = 'P' + '2' + '_ZN1.pdf'
+conn = psycopg2.connect("dbname =ife_project2 user=postgres password=123 port =5433")
+cur = conn.cursor()
+cur.execute("select count(*) from information_schema.columns where table_name= 'points';")
+
+nbr_column = cur.fetchone()
+print(nbr_column)
+cur.execute("INSERT INTO points VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);", [100, 'P', '', 'Marqué sur un rocher', None, None, None, None, None, '01010000204F660000465BEFC40CC92B41D12AB2CF65634AC1', '', None, datetime.datetime(2021, 7, 28, 17, 26, 42, 757405)])
 
 
-in_file = os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop\IFE_PIECES\ZN1', wordFile)
-out_file = os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop\IFE_PIECES\ZN1', pdfFile)
-print(in_file)
-wdFormatPDF = 17
-word = comtypes.client.CreateObject('Word.Application')
-print("loading")
-doc = word.Documents.Open(in_file)
-doc.SaveAs(out_file, FileFormat=wdFormatPDF)
-print('waiting')
-doc.close()
-word.Quit()
-print('done')
+
+
+
+
+
+

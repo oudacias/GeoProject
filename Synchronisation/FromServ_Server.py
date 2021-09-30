@@ -45,16 +45,20 @@ class SynchServerJr:
                 msg = pickle.dumps(True)
                 socktConxion.send(msg)
                 cur.execute("select count(*) from machines where adresse_ip = '" + adressIp + "'")
+                cur.execute("select count(*) from machines")
+
                 ipMachine = cur.fetchone()
 
                 if (ipMachine[0] > 0):
-                    msg = pickle.dumps(True)
-                    socktConxion.send(msg)
+                    # msg = pickle.dumps(True)
+                    # socktConxion.send(msg)
                     msg = socktConxion.recv(90000000)
                     check_machine = pickle.loads(msg)
 
                     if (check_machine):
                         cur.execute("select count(*) from synchronisation where adresse_ip = '" + adressIp + "' and received = true and date(date_creation) = '" + str(today) + "'")
+                        # cur.execute("select count(*) from synchronisation where received = true and date(date_creation) = '" + str(today) + "'")
+
                         machineSych = cur.fetchone()
 
                         if machineSych[0] == 0:
@@ -71,7 +75,7 @@ class SynchServerJr:
                             if (check_database):
                                 tables = ["marche", "zone", "sous_zone", "douar", "consistance", "type_sol",
                                           "type_speculation", "type_opposition", "brigades", "parcelles", "personnes",
-                                          "cles", "points", "synchronisation", "machines"]
+                                          "cles", "points", "machines"]
                                 # Date_création = Today
                                 today_tables_add = []
                                 for tab in tables:
@@ -90,6 +94,7 @@ class SynchServerJr:
                                         for v in range(len(values)):
                                             final_table = list(values[v])
                                             final_table.insert(0, table)
+                                            print(final_table)
                                             msg = pickle.dumps(final_table)
                                             socktConxion.send(msg)
                                             time.sleep(0.5)
@@ -163,4 +168,4 @@ class SynchServerJr:
 
 
 if __name__ == '__main__':
-    SynchServerJr().sendData()
+    SynchServerJr().sendData('192.168.1.12')

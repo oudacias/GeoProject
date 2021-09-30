@@ -84,4 +84,5 @@ class SynchServerGnr:
 
 
 if __name__ == '__main__':
-    SynchServerGnr().sendData()
+    SynchServerGnr().sendData('172.20.10.14')
+

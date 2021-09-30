@@ -53,6 +53,8 @@ class SendDB(Tk):
                 synchJr.selectIp(self.machinBox.get())
             elif tp == 'générale':
                 synchGnr = SynchClient_Gnr.SynchClientGnr()
+                print(self.machinBox.get())
+                print("////////")
                 synchGnr.sockets(self.machinBox.get())
         else:
             showerror("Envoie", "Veuillez sélectionner Une machine et Type de synchronisation")
